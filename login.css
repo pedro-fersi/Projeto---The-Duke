@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-padding-top: smooth;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration:none;  
+}
+
+:root {
+    --main-color: rgba(181, 27, 60, 1);
+    --textocolor: rgba(0, 0, 0, 1);
+    --branco-padrao: rgba(239, 239, 239, 1);
+    --cinza-padrao: rgba(217, 217, 217, 1); 
+    --font-montserrat: "Montserrat", sans-serif;  
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--main-color);
+  box-shadow: 1px 1px 4px var(--textocolor);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.logo_header, .search_bar, .logo_sacola, .logo_usuario {
+  display: flex;
+  align-items: center;
+}
+
+.logo_pato {
+width: 100px;
+}
+
+.no-style {
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+#search_icon {
+font-size: 1.2rem;
+}
+
+.search {
+--padding: 14px;
+width: 400px;
+display: flex;
+align-items: center;
+padding: var(--padding);
+border-radius: 35px;
+background: var(--branco-padrao);
+}
+
+.search-input {
+font-size: 16px;
+color: var(--textocolor);
+margin-left: var(--padding);
+outline: none;
+border: none;
+background: transparent;
+}
+
+#sacola-icon {
+position: relative;
+font-size: 2.5rem;
+cursor: pointer;
+color: white;
+margin-right: 50px; /* Adicionado */
+}
+
+#usuario-icon {
+position: relative;
+font-size: 2.2rem;
+cursor: pointer;
+color: white;
+margin-right: 10px;
+}
+/* HEADER */
+
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#buttons_form {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button_form:hover {
+  background-color: rgb(201, 31, 102);
+}
+
+
+.form {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px; /* Ajuste conforme necessário */
+}
+
+.form h2 {
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input-container i {
+  margin-right: 10px;
+}
+
+.form input[type="text"], .form input[type="password"], .form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form input[type="submit"]:hover {
+  background-color: #cc415f;
+}
+
+

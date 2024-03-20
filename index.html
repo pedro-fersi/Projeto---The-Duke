@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Duke</title>
+    <!--Link para CSS-->
+    <link rel="stylesheet" href="style.css">
+    <!--Link boxicon-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--Fonte das letras-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <!--barra de navegação-->
+        <header>
+            <div class="logo_header">
+                <!--Logo-->
+                <button class="logo_pato no-style" onclick="scrollToTop()">
+                    <img src="Patinho1.svg" alt="Logo Pato">
+                </button>
+            </div>
+            
+            <div class="search_bar">
+                <!-- Barra de pesquisa -->
+                <form>
+                    <div class="search">
+                        <i class='bx bx-search' id="search_icon"></i>
+                        <input class="search-input" type="search" placeholder="O que você procura?">
+                    </div>
+                </form>
+            </div>
+
+            <div class="logo_sacola-user">
+                <!--Sacola icone-->
+                <a href="#">
+                    <i class='bx bxs-shopping-bag' id="sacola-icon" data-quantitiy="0" ></i>
+                </a>
+                <a href="login.html">
+                    <i class='bx bx-user' id="usuario-icon"></i>
+                </a>
+            </div>
+        </header>
+
+        <div class="conteudo"> 
+            <img src="THE DUKE (VERMELHO E AMARELO).svg" class="theduke_meio" alt="THE DUKE">
+            <button id="botao_scroll" onclick="scrollDown()">COMPRE AGORA!</button>
+        </div>
+
+        <div id="Catalogo">
+            <div class="camisetas-container">
+                <!-- Camiseta 1 -->
+                <a href="Camiseta1.html">
+                    <div class="camiseta1">
+                        <div class="imgcamiseta1">
+                            <img src="Camisa 1/teste 1 camiseta.svg" alt="Camiseta Preta">
+                        </div>
+                    </div>
+                </a>
+            
+                <!-- Camiseta 2 -->
+                <a href="Camiseta2.html">
+                    <div class="camiseta2">
+                        <div class="imgcamiseta2">
+                            <img src="Camisa 2/teste 2 camiseta.svg" alt="Camiseta Branca">
+                        </div>
+                    </div>
+                </a>
+            
+                <!-- Camiseta 3 -->
+                <a href="Camiseta3.html">
+                    <div class="camiseta3">
+                        <div class="imgcamiseta3">
+                            <img src="Camisa 3/teste 3 camiseta.svg" alt="Camiseta Verde">
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="descricoes">
+                <!-- Descrição 1 -->
+                <div class="descricao1">
+                    <p>Camiseta 1</p>
+                    <p>R$ 180,00</p>
+                </div>
+
+                <!-- Descrição 2 -->
+                <div class="descricao2">
+                    <p>Camiseta 2</p>
+                    <p>R$ 180,00</p>
+                </div>
+                
+                <!-- Descrição 3 -->
+                <div class="descricao3">
+                    <p>Camiseta 3</p>
+                    <p>R$ 240,00</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
