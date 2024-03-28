@@ -2,12 +2,15 @@ var express = require('express');
 var mysql = require('mysql');
 var app = express();
 
+var mysql = require('mysql');
+
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "250600",
-  database: "loja_camisetas"
+  database: "The_Duke"
 });
+
 
 con.connect(function(err) {
   if (err) throw err;
