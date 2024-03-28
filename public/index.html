@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
 </head>
 <body>
     <div class="page-container">
@@ -30,7 +29,7 @@
                 <form>
                     <div class="search">
                         <i class='bx bx-search' id="search_icon"></i>
-                        <input class="search-input" type="search" placeholder="O que você procura?">
+                        <input class="search-input" id="search-input" type="search" placeholder="O que você procura?">
                     </div>
                 </form>
             </div>
@@ -101,7 +100,12 @@
                 </div>
             </div>
 
+            <!-- Contêiner de resultados de pesquisa -->
+            <div id="search-results"></div>
+
         </div>
+        <script src="script.js"></script>
+        <script src="script2.js"></script>
     </div>
 </body>
 </html>
