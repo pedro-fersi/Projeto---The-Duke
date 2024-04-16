@@ -18,18 +18,25 @@
     --font-montserrat: "Montserrat", sans-serif;  
 }
 
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: var(--main-color);
-    box-shadow: 1px 1px 4px var(--textocolor);
-    z-index: 1000;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10%;
+/* HEADER */
+.container{ 
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header{
+  background-color: var(--main-color);
+  width: 100%;
+  padding: 10px;
+  box-shadow: 1px 1px 4px var(--textocolor);
+  z-index: 1000;
+  justify-content: space-between;
+  padding: 0 10%;
+  position: fixed;
+  top: 0;
 }
 
 .logo_pato {
@@ -40,6 +47,33 @@ header {
     padding: 0;
     background: none;
     cursor: pointer;
+}
+
+.funcoes{
+  width: 15%;
+  display: flex;
+}
+
+.funcoes button{
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 80px;
+}
+
+.funcoes button i{
+  font-size: 40px;
+  margin-right: 10px;
+  color: var(--branco-padrao);
+  cursor: pointer;
+}
+
+.search_bar {
+  flex: 1; /* Ocupar o espaço restante */
+  text-align: center; /* Centralizar o conteúdo */
+  margin-left: 10px;
 }
 
 #search_icon {
@@ -54,6 +88,7 @@ header {
   padding: var(--padding);
   border-radius: 35px;
   background: var(--branco-padrao);
+  margin: 0 auto; /* Centraliza a barra de pesquisa */
 }
 
 .search-input {
@@ -64,15 +99,7 @@ header {
   border: none;
   background: transparent;
 }
-
-#sacola-icon {
-  position: relative;
-  font-size: 2.5rem;
-  cursor: pointer;
-  color: white;
-}
-
-/*HEADER*/
+/* HEADER */
 
 /* Estilos gerais */
 body {

@@ -13,32 +13,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="login.js"></script>
 </head>
+    <!--HEADER-->
     <header>
-        <div class="logo_header">
-            <!-- Logo como um botão redirecionando para outra página -->
-            <a href="index.html">
-                <img src="Patinho1.svg" class="logo_pato" alt="logo The Duke">
-            </a>
-        </div>
-        
-        
-        <div class="search_bar">
-            <!-- Barra de pesquisa -->
-            <form>
-                <div class="search">
-                    <i class='bx bx-search' id="search_icon"></i>
-                    <input class="search-input" type="search" placeholder="O que você procura?">
-                </div>
-            </form>
-        </div>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><button><img src="Patinho1.svg" class="logo_pato" alt="logo The Duke"></button></a>
+            </div>
 
-        <div class="logo_sacola">
-        <!--Sacola icone-->
-        <i class='bx bxs-shopping-bag' id="sacola-icon" data-quantitiy="0" ></i>
-        </div>
+            <div class="search_bar">
+                <!-- Barra de pesquisa -->
+                <form>
+                    <div class="search">
+                        <i class='bx bx-search' id="search_icon"></i>
+                        <input class="search-input" type="search" placeholder="O que você procura?">
+                    </div>
+                </form>
+            </div>
 
-    </div>
-    </header>
+            <div class="funcoes">
+                <a href="#"><button><i class='bx bxs-shopping-bag'></i></button></a>
+                <a href="login.html"><button><i class='bx bxs-user'></i></button></a>
+            </div>
+        </div>
+    </header> 
+    <!--HEADER-->
     
     <body>
         <div id="buttons_form">
