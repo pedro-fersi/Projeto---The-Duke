@@ -6,7 +6,7 @@
     --main-color: rgba(181, 27, 60, 1);
     --text-color: rgba(0, 0, 0, 1);
     --white-default: rgba(239, 239, 239, 1);
-    --gray-default: rgba(217, 217, 217, 1);
+    --gray-default: rgba(217, 217, 217, 1);   
 }
 
 /* Resetando estilos padrão e aplicando fonte global */
@@ -87,12 +87,26 @@ header {
     background: transparent;
 }
 
-#sacola-icon {
-    position: relative;
-    font-size: 2.5rem;
-    cursor: pointer;
+.funcoes{
+    width: 15%;
+    display: flex;
+  }
+  
+  .funcoes button{
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 80px;
+  }
+  
+  .funcoes button i{
+    font-size: 40px;
+    margin-right: 10px;
     color: white;
-}
+    cursor: pointer;
+  }
 
 /* CONTEUDO */
 
@@ -118,8 +132,8 @@ header {
     height: auto;
 }
 
-/* DESCRIÇÃO2 */
-.descricao2 {
+/* DESCRIÇÃO1 */
+.descricao1 {
     width: 25rem;
     display: flex;
     flex-direction: column;
@@ -132,13 +146,13 @@ header {
     margin-bottom: 10px;
 }
 
-.descricao2 h1 {
+.descricao1 h1 {
     font-size: 1.8rem;
     margin-bottom: 10px;
     color: var(--main-color);
 }
 
-.descricao2 h3 {
+.descricao1 h3 {
     font-size: 1.4rem;
     color: var(--text-color);
 }

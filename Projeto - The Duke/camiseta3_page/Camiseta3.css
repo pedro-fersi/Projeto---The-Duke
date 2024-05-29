@@ -87,12 +87,26 @@ header {
     background: transparent;
 }
 
-#sacola-icon {
-    position: relative;
-    font-size: 2.5rem;
-    cursor: pointer;
+.funcoes{
+    width: 15%;
+    display: flex;
+  }
+  
+  .funcoes button{
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 80px;
+  }
+  
+  .funcoes button i{
+    font-size: 40px;
+    margin-right: 10px;
     color: white;
-}
+    cursor: pointer;
+  }
 
 /* CONTEUDO */
 
@@ -119,7 +133,7 @@ header {
 }
 
 /* DESCRIÇÃO1 */
-.descricao1 {
+.descricao3 {
     width: 25rem;
     display: flex;
     flex-direction: column;
@@ -132,13 +146,13 @@ header {
     margin-bottom: 10px;
 }
 
-.descricao1 h1 {
+.descricao3 h1 {
     font-size: 1.8rem;
     margin-bottom: 10px;
     color: var(--main-color);
 }
 
-.descricao1 h3 {
+.descricao3 h3 {
     font-size: 1.4rem;
     color: var(--text-color);
 }

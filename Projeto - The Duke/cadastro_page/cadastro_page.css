@@ -1,0 +1,217 @@
+
+    /* HEADER */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+  
+    * {
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-padding-top: smooth;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;  
+    }
+    
+    :root {
+        --main-color: rgba(181, 27, 60, 1);
+        --textocolor: rgba(0, 0, 0, 1);
+        --branco-padrao: rgba(239, 239, 239, 1);
+        --cinza-padrao: rgba(217, 217, 217, 1); 
+        --font-montserrat: "Montserrat", sans-serif;  
+    }
+    
+    /* HEADER */
+    .container{ 
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    header{
+      background-color: var(--main-color);
+      width: 100%;
+      padding: 10px;
+      box-shadow: 1px 1px 4px var(--textocolor);
+      z-index: 1000;
+      justify-content: space-between;
+      padding: 0 10%;
+      position: fixed;
+      top: 0;
+    }
+    
+    .logo_pato {
+      width: 100px;
+    }
+    .no-style {
+        border: none;
+        padding: 0;
+        background: none;
+        cursor: pointer;
+    }
+    
+    .funcoes{
+      width: 15%;
+      display: flex;
+    }
+    
+    .funcoes button{
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      padding: 0;
+      margin-left: 80px;
+    }
+    
+    .funcoes button i{
+      font-size: 40px;
+      margin-right: 10px;
+      color: var(--branco-padrao);
+      cursor: pointer;
+    }
+    
+    .search_bar {
+      flex: 1; /* Ocupar o espaço restante */
+      text-align: center; /* Centralizar o conteúdo */
+      margin-left: 10px;
+    }
+    
+    #search_icon {
+      font-size: 1.2rem;
+    }
+    
+    .search {
+      --padding: 14px;
+      width: 400px;
+      display: flex;
+      align-items: center;
+      padding: var(--padding);
+      border-radius: 35px;
+      background: var(--branco-padrao);
+      margin: 0 auto; /* Centraliza a barra de pesquisa */
+    }
+    
+    .search-input {
+      font-size: 16px;
+      color: var(--textocolor);
+      margin-left: var(--padding);
+      outline: none;
+      border: none;
+      background: transparent;
+    }
+    /* HEADER */
+
+.container2 {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  width: 100%;
+  height: 100vh; /* Faz com que ocupe toda a altura da viewport */
+}
+
+.card {
+  background-color: #ffffff80;
+  padding: 30px;
+  border-radius: 4%;
+  box-shadow: 3px 3px 1px 0px #00000060;
+  width: 400px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--main-color);
+}
+
+.label-float input {
+  width: 100%;
+  padding: 5px 5px;
+  display: inline-block;
+  border: 0;
+  border-bottom: 2px solid var(--textocolor);
+  background-color: transparent;
+  outline: none;
+  min-width: 180px;
+  font-size: 16px;
+  transition: all .3s ease-out;
+  border-radius: 0;
+}
+
+.label-float {
+  position: relative;
+  padding-top: 13px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.label-float input:focus {
+  border-bottom: 2px solid var(--main-color);
+}
+
+.label-float label {
+  color: var(--main-color);
+  pointer-event: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 13px;
+  transition: all .3s ease-out;
+}
+
+.label-float input:focus + label,
+.label-float input:valid + label {
+  font-size: 13px;
+  margin-top: 0;
+  color: var(--textocolor);
+}
+
+.fa-eye {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+#msgError {
+  text-align: center;
+  color: #ff0000;
+  background-color: #ffbbbb;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+
+#msgSuccess {
+  text-align: center;
+  color: #00bb00;
+  background-color: #bbffbe;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+
+#cadastrar-button {
+  background-color: transparent;
+  border-color: var(--main-color);
+  color: var(--main-color);
+  padding: 7px;
+  font-weight: bold;
+  font-size: 12pt;
+  margin-top: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  transition: all .4s ease-out;
+}
+
+#cadastrar-button:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+
+
+

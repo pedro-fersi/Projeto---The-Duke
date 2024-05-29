@@ -1,75 +1,89 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
-const path = require('path');
 
 const app = express();
+const port = 3000;
 
-// Configuração do middleware para analisar dados do formulário
+// Configuração do body-parser para lidar com dados JSON
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Configuração para servir arquivos estáticos (como HTML)
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Configuração da conexão com o banco de dados MySQL
+// Configuração do MySQL
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '250600',
-    database: 'cadastro_usuarios'
+  host: 'localhost',
+  user: 'root',
+  password: '250600',
+  database: 'cadastro_usuarios'
 });
 
-// Conectar-se ao banco de dados
-connection.connect((err) => {
-    if (err) {
-        console.error('Erro ao conectar ao banco de dados:', err);
-        return;
-    }
-    console.log('Conexão bem-sucedida ao banco de dados MySQL');
+// Conectar ao banco de dados MySQL
+connection.connect(err => {
+  if (err) {
+    console.error('Erro ao conectar ao banco de dados:', err);
+    return;
+  }
+  console.log('Conexão ao banco de dados MySQL estabelecida com sucesso');
 });
 
-// Rota para exibir a página de login
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'login.html'));
-});
-
-// Rota para processar os dados do formulário de login
+// Rota para lidar com solicitações POST para '/login'
 app.post('/login', (req, res) => {
-    const { usuario, senha } = req.body;
+  const { username, password } = req.body;
 
-    // Aqui você colocará a lógica para autenticar o usuário
-    // Exemplo básico: apenas redirecionar para a página de perfil
-    res.redirect('/perfil');
+  // Verificar no banco de dados se o usuário existe e as credenciais estão corretas
+  const query = `SELECT * FROM usuarios WHERE username = ? AND senha = ?`;
+  connection.query(query, [username, password], (err, results) => {
+    if (err) {
+      console.error('Erro ao executar a consulta no banco de dados:', err);
+      res.status(500).json({ error: 'Erro interno do servidor' });
+      return;
+    }
+
+    if (results.length === 1) {
+      // Usuário autenticado com sucesso
+      res.status(200).json({ message: 'Login bem-sucedido' });
+    } else {
+      // Credenciais inválidas
+      res.status(401).json({ error: 'Credenciais inválidas' });
+    }
+  });
 });
 
-// Rota para exibir a página de cadastro
-app.get('/cadastro', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'cadastro.html'));
-});
+// Rota para lidar com solicitações POST para '/registro'
+app.post('/registro', (req, res) => {
+  const { username, password, email } = req.body;
 
-// Rota para processar os dados do formulário de cadastro
-app.post('/cadastro', (req, res) => {
-    const { usuario, senha, email } = req.body;
+  // Verificar se o usuário já existe no banco de dados
+  const checkQuery = `SELECT * FROM usuarios WHERE username = ?`;
+  connection.query(checkQuery, [username], (err, results) => {
+    if (err) {
+      console.error('Erro ao verificar usuário no banco de dados:', err);
+      res.status(500).json({ error: 'Erro interno do servidor' });
+      return;
+    }
 
-    // Aqui você colocará a lógica para inserir um novo usuário no banco de dados
-    const sql = 'INSERT INTO usuarios (usuario, senha, email) VALUES (?, ?, ?)';
-    connection.query(sql, [usuario, senha, email], (error, results, fields) => {
-        if (error) {
-            console.error('Erro ao inserir novo usuário:', error);
-            return res.redirect('/cadastro?erro=erro-ao-registrar');
-        }
-        console.log('Novo usuário registrado com sucesso');
-        res.redirect('/login');
+    if (results.length > 0) {
+      // O usuário já existe
+      res.status(409).json({ error: 'Usuário já existe' });
+      return;
+    }
+
+    // Inserir novo usuário no banco de dados
+    const insertQuery = `INSERT INTO usuarios (username, senha, email) VALUES (?, ?, ?)`;
+    connection.query(insertQuery, [username, password, email], (err, results) => {
+      if (err) {
+        console.error('Erro ao inserir usuário no banco de dados:', err);
+        res.status(500).json({ error: 'Erro interno do servidor' });
+        return;
+      }
+      
+      // Novo usuário registrado com sucesso
+      res.status(201).json({ message: 'Usuário registrado com sucesso' });
     });
+  });
 });
 
-// Rota para a página de perfil (apenas para fins de demonstração)
-app.get('/perfil', (req, res) => {
-    res.send('Página de perfil do usuário');
-});
-
-// Inicia o servidor
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
+// Inicie o servidor
+app.listen(port, () => {
+  console.log(`Servidor rodando em http://localhost:${port}`);
 });
