@@ -1,30 +1,74 @@
-var express = require('express');
-var mysql = require('mysql');
-var app = express();
+// Importar os módulos necessários
+const express = require('express');
+const mongoose = require('mongoose');
 
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "250600",
-  database: "loja_tdk"
-});
+// Criar uma instância do aplicativo express
+const app = express();
 
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Conectado ao banco de dados MySQL!");
-});
+// Porta do servidor
+const PORT = process.env.PORT || 3000;
 
-app.get('/pesquisa', function(req, res) {
-  var consulta = req.query.q;
-  var sql = "SELECT * FROM camisetas WHERE modelo LIKE ?";
-  con.query(sql, ['%' + consulta + '%'], function(err, result) {
-    if (err) throw err;
-    res.json(result);
+// Conectar ao banco de dados MongoDB
+mongoose.connect('mongodb://localhost:27017/nome-do-banco-de-dados')
+  .then(() => {
+    console.log('Conexão com o MongoDB estabelecida com sucesso');
+  })
+  .catch((err) => {
+    console.error('Erro ao conectar ao MongoDB:', err.message);
+    process.exit(1); // Encerrar o processo em caso de erro
   });
+
+// Definir o esquema do produto usando Mongoose
+const produtoSchema = new mongoose.Schema({
+  nome: String,
+  estoque: Number
 });
 
-app.use(express.static('public'));
+// Criar um modelo com base no esquema
+const Produto = mongoose.model('Produto', produtoSchema);
 
-app.listen(3000, function () {
-  console.log('Servidor rodando na porta 3000!');
+// Configurar o servidor para lidar com solicitações JSON
+app.use(express.json());
+
+// Rota para obter o estoque de um produto específico
+app.get('/', async (req, res) => {
+  const nomeProduto = req.params.produto;
+
+  try {
+    const produto = await Produto.findOne({ nome: nomeProduto });
+
+    if (!produto) {
+      return res.status(404).json({ error: 'Produto não encontrado' });
+    }
+
+    res.json({ estoque: produto.estoque });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Rota para atualizar o estoque após uma compra
+app.post('/comprar', async (req, res) => {
+  const { produto, quantidade } = req.body;
+
+  try {
+    const updatedProduto = await Produto.findOneAndUpdate(
+      { nome: produto },
+      { $inc: { estoque: -quantidade } }, // Decrementar o estoque em 'quantidade'
+      { new: true } // Retorna o documento atualizado
+    );
+
+    if (!updatedProduto) {
+      return res.status(404).json({ error: 'Produto não encontrado' });
+    }
+
+    res.json({ message: 'Estoque atualizado com sucesso' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Iniciar o servidor
+app.listen(PORT, () => {
+  console.log(`Servidor está ouvindo na porta ${PORT}`);
 });
