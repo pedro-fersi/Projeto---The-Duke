@@ -244,3 +244,99 @@ header {
     border-radius: 15%;
     cursor: pointer;
 }
+
+/* tabela carrinho de compras */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-head-item {
+    text-align: start;
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 6px;
+    text-transform: uppercase;
+  }
+  
+  .second-col,
+  .third-col {
+    width: 26%;
+  }
+  
+  .cart-product td {
+    padding: 8px 0;
+  }
+  
+  .product-identification {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-product-image {
+    width: 120px;
+    height: 70px;
+  }
+  
+  .cart-product-title {
+    margin-left: 16px;
+    font-size: 18px;
+  }
+  
+  .cart-product-price {
+    font-family: "Raleway", sans-serif;
+  }
+  
+  .product-qtd-input {
+    width: 48px;
+    height: 34px;
+    border-radius: 6px;
+    border: 2px solid var(--blue);
+    text-align: center;
+    background: #eee;
+  }
+  
+  .remove-product-button {
+    margin-left: 12px;
+    background: var(--main-color);
+    color: var(--white-default);
+    padding: 10px 8px;
+    border: 0;
+    border-radius: 6px;
+  
+    transition: filter 0.2s;
+  }
+  
+  .remove-product-button:hover {
+    filter: brightness(0.8);
+  }
+  
+  .cart-total-container {
+    border-top: 1px solid var(--gray);
+    text-align: end;
+    padding: 6px 16px 0 0;
+    font-size: 18px;
+  }
+  
+  .cart-total-container strong {
+    margin-right: 12px;
+  }
+  
+  .purchase-button {
+    display: block;
+    margin: 20px auto; /* Centraliza horizontalmente */
+    padding: 12px 20px;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: transform 0.1s ease;
+}
+
+.purchase-button:hover {
+    transform: scale(0.95);
+}
+
+
+
