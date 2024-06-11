@@ -98,7 +98,7 @@ function cadastrar(){
     msgError.innerHTML = ''
     
     setTimeout(()=>{
-        window.location.href = '/Projeto - The Duke/login_page/login.html'
+        window.location.href = '/login_page/login.html'
     }, 3000)
   
     

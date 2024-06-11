@@ -1,8 +1,8 @@
 // Armazenar caminhos das imagens em um objeto
 const caminhosDasImagens = {
-    linha1: '/Projeto - The Duke/Camisa 3/teste 3 camiseta.svg',
-    linha2: '/Projeto - The Duke/Camisa 3/teste 3 camiseta (Frente).svg',
-    linha3: '/Projeto - The Duke/Camisa 3/teste 3 camiseta (Costas).svg'
+    linha1: '/Camisa 3/teste 3 camiseta.svg',
+    linha2: '/Camisa 3/teste 3 camiseta (Frente).svg',
+    linha3: '/Camisa 3/teste 3 camiseta (Costas).svg'
 };
 
 // Função para mudar a imagem principal

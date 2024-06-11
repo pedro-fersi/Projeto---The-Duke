@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Duke</title>
     <!--Link para CSS-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/home_page/style.css">
     <!--Link boxicon-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!--Fonte das letras-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
 </head>
 <body>
     <!--HEADER-->
@@ -20,7 +19,7 @@
         <div class="container">
             <div class="logo">
                 <button class="logo_pato no-style" onclick="scrollToTop()">
-                    <img src="/Projeto - The Duke/images/Patinho1.svg" alt="Logo Pato">
+                    <img src="/images/Patinho1.svg" alt="Logo Pato">
                 </button>
             </div>
 
@@ -36,42 +35,42 @@
 
             <div class="funcoes">
                 <a href="#"><button><i class='bx bxs-shopping-bag'></i></button></a>
-                <a href="/Projeto - The Duke/login_page/login.html"><button><i class='bx bxs-user'></i></button></a>
+                <a href="/login_page/login.html"><button><i class='bx bxs-user'></i></button></a>
             </div>
         </div>
     </header> 
     <!--HEADER-->
 
     <div class="conteudo"> 
-        <img src="/Projeto - The Duke/images/THE DUKE (VERMELHO E AMARELO).svg" class="theduke_meio" alt="THE DUKE">
+        <img src="/images/THE DUKE (VERMELHO E AMARELO).svg" class="theduke_meio" alt="THE DUKE">
         <button id="botao_scroll" onclick="scrollDown()">COMPRE AGORA!</button>
     </div>
 
     <div id="Catalogo">
         <div class="camisetas-container">
             <!-- Camiseta 1 -->
-            <a href="/Projeto - The Duke/camiseta1_page/Camiseta1.html">
+            <a href="/camiseta1_page/Camiseta1.html">
                 <div class="camiseta1">
                     <div class="imgcamiseta1">
-                        <img src="/Projeto - The Duke/Camisa 1/teste 1 camiseta.svg" alt="Camiseta Preta">
+                        <img src="/Camisa 1/teste 1 camiseta.svg" alt="Camiseta Preta">
                     </div>
                 </div>
             </a>
             
             <!-- Camiseta 2 -->
-            <a href="/Projeto - The Duke/camiseta2_page/Camiseta2.html">
+            <a href="/camiseta2_page/Camiseta2.html">
                 <div class="camiseta2">
                     <div class="imgcamiseta2">
-                        <img src="/Projeto - The Duke/Camisa 2/teste 2 camiseta.svg" alt="Camiseta Branca">
+                        <img src="/Camisa 2/teste 2 camiseta.svg" alt="Camiseta Branca">
                     </div>
                 </div>
             </a>
             
             <!-- Camiseta 3 -->
-            <a href="/Projeto - The Duke/camiseta3_page/Camiseta3.html">
+            <a href="/camiseta3_page/Camiseta3.html">
                 <div class="camiseta3">
                     <div class="imgcamiseta3">
-                        <img src="/Projeto - The Duke/Camisa 3/teste 3 camiseta.svg" alt="Camiseta Verde">
+                        <img src="/Camisa 3/teste 3 camiseta.svg" alt="Camiseta Verde">
                     </div>
                 </div>
             </a>
@@ -99,63 +98,6 @@
 
     </div>
 
-    <!-- PARTE DE CARRINHO --> 
-
- 
-    <section class="container normal-section">
-        <h2 class="section-title">Carrinho</h2>
-
-        <table class="cart-table">
-          <thead>
-            <tr>
-              <th class="table-head-item first-col">Item</th>
-              <th class="table-head-item second-col">Preço</th>
-              <th class="table-head-item third-col">Quantidade</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <!--
-            <tr class="cart-product">
-              <td class="product-identification">
-                <img src="/Projeto - The Duke/Camisa 1/teste 1 camiseta.svg" alt="Camiseta 1" class="cart-product-image">
-                <strong class="cart-product-title">Camiseta Preta</strong>
-              </td>
-              <td>
-                <span class="cart-product-price">R$180,00</span>
-              </td>
-              <td>
-                <input type="number" value="2" min="0" class="product-qtd-input">
-                <button type="button" class="remove-product-button">Remover</button>
-              </td>
-            </tr>
-            <tr class="cart-product">
-              <td class="product-identification">
-                <img src="/Projeto - The Duke/Camisa 2/teste 2 camiseta.svg" alt="Camiseta 2" class="cart-product-image">
-                <strong class="cart-product-title">Camiseta Branca</strong>
-              </td>
-              <td>
-                <span class="cart-product-price">R$190,00</span>
-              </td>
-              <td>
-                <input type="number" value="1" min="0" class="product-qtd-input">
-                <button type="button" class="remove-product-button">Remover</button>
-              </td>
-            </tr>
-          </tbody>
-          -->
-          <tfoot>
-            <tr>
-              <td colspan="3" class="cart-total-container">
-                <strong>Total</strong>
-                <span>R$0,00</span>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
-
-        <button type="button" class="purchase-button">Finalizar Compra</button>
-      </section>
-
+    <script src="/home_page/script.js"></script>
 </body>
 </html>
