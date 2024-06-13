@@ -13,4 +13,3 @@ if (localStorage.getItem("token") == null) {
     localStorage.removeItem("userLogado");
     window.location.href = "/Projeto - The Duke/home_page/index.html";
   }
-

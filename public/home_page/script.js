@@ -15,7 +15,3 @@
         behavior: 'smooth' // Adiciona uma animação suave de rolagem
     });
 }
-
-
-
-
